@@ -1,0 +1,7 @@
+
+bin/combat/CombatTest.class
+bin/menu/menuTest.class
+bin/character/User.class
+.settings/org.eclipse.jdt.core.prefs
+.project
+.classpath
