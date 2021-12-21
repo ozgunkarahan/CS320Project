@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class User  {
     private String nickname;
     double hitPoints;
+    double maxHitPoints;
     double physicalDamage;
     double magicRate;
     double blockRate;
@@ -13,6 +14,9 @@ public class User  {
     ArrayList<String> inventory; 
     String className;
     Stats statistics;
+    
+    
+    
     public User(String name,String className){
        this.nickname=name;
        this.className=className;
@@ -25,7 +29,19 @@ public class User  {
        ArrayList<String> inventory;
        this.statistics= new Stats();
     }
-    public User(){}
+    public User(double hp, double pd, double md, double br, double dc){
+    	this.hitPoints = hp;
+    	this.physicalDamage = pd;
+    	this.magicRate = md;
+    	this.blockRate = br;
+    	this.dodgeChance = dc;
+        ArrayList<String> inventory;
+        this.statistics= new Stats();
+     }
+    
+    public User(){
+    	
+    }
     public String GetNickname(){
         return this.nickname;
     }
@@ -44,5 +60,8 @@ public class User  {
     }
     public void createUser(){// main de olması daha mantıklı olablir
         
-    }       
+    }
+    public void print() {
+    	System.out.println("Hp: "+this.hitPoints+" PD: "+this.physicalDamage);
+    }
 }

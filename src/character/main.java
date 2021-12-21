@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String args[]){
-        Scanner s =new Scanner(System.in);
+   /*     Scanner s =new Scanner(System.in);
         
         
         System.out.println("Please enter your nickname: ");
@@ -17,6 +17,11 @@ public class main {
         System.out.println("Your class: "+ player01.getClass_name());
       
         player01.Getstats().showStats();
+        */
+    	Warrior a = new Warrior();
+    	a.print();
+    	
+    	
      }
      
     
