@@ -5,3 +5,15 @@ bin/character/User.class
 .settings/org.eclipse.jdt.core.prefs
 .project
 .classpath
+.idea/misc.xml
+out/production/CS320Project/character/BattleMage.class
+out/production/CS320Project/character/main.class
+out/production/CS320Project/character/Ranger.class
+out/production/CS320Project/character/Stats.class
+out/production/CS320Project/character/User.class
+out/production/CS320Project/character/Warrior.class
+out/production/CS320Project/character/Wizard.class
+CS320Project.iml
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/modules.xml
