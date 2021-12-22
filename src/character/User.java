@@ -4,15 +4,17 @@ import java.util.ArrayList;
 
 public class User extends Stats  {
     String nickname;
-    double hitPoints;
-    double maxHitPoints;
-    double physicalDamage;
-    double magicRate;
-    double blockRate;
-    double dodgeChance;
-    ArrayList<String> inventory; 
-    String className;
-    Stats statistics;
+    public  double hitPoints;
+    public double maxHitPoints;
+    public double physicalDamage;
+    public double magicRate;// magic damage
+    public double blockRate;
+    public double dodgeChance;
+    public int armor;
+    public int magicResist;
+    public ArrayList<String> inventory; 
+    public String className;
+    public Stats statistics;
 
     
     public User(String name,String className){

@@ -7,7 +7,7 @@ public class Stats {
     String className;
     public Stats(){
       
-       this.level=0;
+       this.level=1;
        this.experience=0;
        this.currency=0;
        this.enemyDefeatCount=0;
@@ -33,5 +33,8 @@ public class Stats {
                 "\nExperience: " + this.experience +
                 "\nCurrency: " + this.currency);
         System.out.println("------------------------------------");
-    }         
+    } 
+    public int getLevel() {
+    	return this.level;
+    }
 }
