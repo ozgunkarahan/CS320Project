@@ -14,7 +14,12 @@ public class Ranger extends User {
     double cooldown;
     ArrayList<String> inventory;
     ArrayList<String> spellListRanger;
-}  
+}
+    public Ranger() {
+        super(100, 10, 0, 20,0);
+        this.className = "Ranger";
+
+    }
      public void setclassRanger(){
         
     }

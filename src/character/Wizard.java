@@ -1,5 +1,6 @@
 package character;
 import java.util.ArrayList;
+import java.lang.String;
 
 public class Wizard extends User {
     ArrayList<String> spellListWizard;
@@ -14,7 +15,12 @@ public class Wizard extends User {
     double cooldown=10;
     ArrayList<String> inventory;
     ArrayList<String> spellListBattleMage;
-}  
+}
+    public Wizard() {
+        super(100, 10, 0, 20,0);
+        this.className = "Wizard";
+
+    }
     public void setclassWizard(){
         
     }

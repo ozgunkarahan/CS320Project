@@ -1,10 +1,10 @@
 package character;
-public class Stats extends User {
+public class Stats {
     int level;
     double experience;
     double currency;
     double enemyDefeatCount;
-    String class_name;
+    String className;
     public Stats(){
       
        this.level=0;
@@ -28,10 +28,10 @@ public class Stats extends User {
         
     }
     public void showStats(){
-        System.out.println("*******************************");
-        System.out.println("Level :"+ this.level+"\nExperience: "+
-                this.experience+"\nCurrency: "+this.currency+
-                "\nEnemy Defeat: "+this.enemyDefeatCount);
-        System.out.println("*******************************");
+        System.out.println("--------Example Stats Screen--------");
+        System.out.println("Level :" + this.level +
+                "\nExperience: " + this.experience +
+                "\nCurrency: " + this.currency);
+        System.out.println("------------------------------------");
     }         
 }

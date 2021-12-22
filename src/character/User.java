@@ -2,20 +2,18 @@ package character;
 import java.lang.String;
 import java.util.ArrayList;
 
-public class User  {
-    private String nickname;
+public class User extends Stats  {
+    String nickname;
     double hitPoints;
     double maxHitPoints;
     double physicalDamage;
     double magicRate;
     double blockRate;
     double dodgeChance;
-    double cooldown;
     ArrayList<String> inventory; 
     String className;
     Stats statistics;
-    
-    
+
     
     public User(String name,String className){
        this.nickname=name;
@@ -24,8 +22,7 @@ public class User  {
        double physicalDamage;
        double magicRate;
        double blockRate;        
-       double dodgeChance;   
-       double cooldown;
+       double dodgeChance;
        ArrayList<String> inventory;
        this.statistics= new Stats();
     }
@@ -42,20 +39,24 @@ public class User  {
     public User(){
     	
     }
-    public String GetNickname(){
+    public String getNickname(){
         return this.nickname;
     }
     public String setNickname(String name){
         this.nickname=name;
         return nickname;
     }
-    public Stats Getstats(){
+    public String setClass(String name){
+        this.className=name;
+        return className;
+    }
+    public Stats getStats(){
         return this.statistics;
     }
     public String getClass_name(){
         return this.className;
     }
-    public void DeleteClass(String s){ // object mi yoksa string mi silecek?
+    public void deleteClass(String s){ // object mi yoksa string mi silecek?
         
     }
     public void createUser(){// main de olması daha mantıklı olablir
