@@ -37,26 +37,22 @@ public class Menu {
             setclass biraz garip oldu, object yarıtılınca zaten set'leniyor aslında
             */
                 case "warrior" -> {
-                    Warrior warrior = new Warrior("Warrior");
-                    warrior.setclassWarrior();
+                   
                     System.out.println("Selected class: Warrior\n");
                     setClass = true;
                 }
                 case "wizard" -> {
-                    Wizard wizard = new Wizard("Wizard");
-                    wizard.setclassWizard();
+                    
                     System.out.println("Selected class: Wizard\n");
                     setClass = true;
                 }
                 case "ranger" -> {
-                    Ranger ranger = new Ranger("Ranger");
-                    ranger.setclassRanger();
+                    
                     System.out.println("Selected class: Ranger\n");
                     setClass = true;
                 }
                 case "battlemage" -> {
-                    BattleMage battleMage = new BattleMage("BattleMage");
-                    battleMage.setclassBattleMage();
+                   
                     System.out.println("Selected class: BattleMage\n");
                     setClass = true;
                 }
@@ -68,15 +64,14 @@ public class Menu {
                 }
             }
         }
-        user.setClass(className);
+        
         String[] returnUser = new String[2];
         returnUser[0] = className;
         returnUser[1] = nickname;
-        user.showStats();
         return returnUser;
 	}
 	
-	public static void mainMenu(String[] s) {
+	public static void mainMenu(User u) {
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -97,6 +92,7 @@ public class Menu {
 	                case "encounter" -> {
 	                    System.out.println("\nWIP: Create encounter and switch to combat menu\n");
 	                    selectMenu = "main";
+	                    u.print();
 	                }
 	                case "inventory" -> {
 	                    System.out.println("\nWIP: Switch to inventory menu\n");
