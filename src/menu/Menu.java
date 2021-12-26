@@ -107,6 +107,7 @@ public class Menu {
 	                case "craft" -> {
 	                    System.out.println("\nWIP: Switch to craft menu\n");
 	                    selectMenu = "main";
+	                    menu.CraftMenu.Craft(player);
 	                }
 	                case "rest" -> {
 	                    System.out.println("\nWIP: Rest\n");
