@@ -2,7 +2,7 @@ package character;
 public class Stats {
     int level;
     double experience;
-    double currency;
+   public double currency;
     double enemyDefeatCount;
     String className;
     public Stats(){
