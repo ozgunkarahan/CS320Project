@@ -1,4 +1,5 @@
 
+bin/
 bin/combat/CombatTest.class
 bin/menu/menuTest.class
 bin/character/User.class

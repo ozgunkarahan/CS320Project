@@ -71,11 +71,12 @@ public class Menu {
         return returnUser;
 	}
 	
-	public static void mainMenu(User u) {
+	public static void mainMenu(User player) {
 		
 		Scanner scanner = new Scanner(System.in);
 		
 	      // Main Menu
+		
 	        System.out.println("\nWIP: Main Menu introduction..");
 	        String selectMenu = "main";
 	        boolean run = true;
@@ -92,7 +93,8 @@ public class Menu {
 	                case "encounter" -> {
 	                    System.out.println("\nWIP: Create encounter and switch to combat menu\n");
 	                    selectMenu = "main";
-	                    u.print();
+	                    CombatMenu.CombatMenu(player);
+	                    player.print();
 	                }
 	                case "inventory" -> {
 	                    System.out.println("\nWIP: Switch to inventory menu\n");

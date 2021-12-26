@@ -24,7 +24,8 @@ public class main {
         	player = new BattleMage(temp[1]);
         }
        
-       // menu.Menu.mainMenu(player);
+        menu.Menu.mainMenu(player);
+        /*
         player.print();
         player.inventory[0] = 10;
         CraftMenu.Craft(player);
@@ -33,6 +34,8 @@ public class main {
         combat.DamageCalculation.calculatePhysicalDamage(player, enemy);
         combat.DamageCalculation.calculateDamageTaken(player, enemy);
         player.print();
+        */
+        
     }
 }
    
