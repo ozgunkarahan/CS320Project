@@ -28,7 +28,7 @@ public class DamageCalculation {
 		return rand.nextInt(101);
 	}
 	
-	public static void calculatePhysicalDamage(User player, Enemy enemy) {
+	public static void calculatePhysicalDamage(User player, Enemy enemy) { //this will be used in loop
 		double diceMultiplier = diceRoll6();
 		int dodgeRoll = diceRoll100();
 		int blockRoll = diceRoll100(); 
@@ -44,23 +44,51 @@ public class DamageCalculation {
 		
 		 
 	}
-	public static void calculateDamageTaken(User player, Enemy enemy) {
+	public static void calculateDamageTaken(User player, Enemy enemy) {//this will be used in loop
 		
 		double diceMultiplier = diceRoll6();
 		int dodgeRoll = diceRoll100();
 		int blockRoll = diceRoll100();
 		double trueDamage;
-		if((dodgeRoll - player.dodgeChance)<0 || blockRoll - player.blockRate<0)
+		if((dodgeRoll - player.dodgeChance)<0) {
+			System.out.println("You dodged the attack");
 			trueDamage = 0;
+		}
+		else if(blockRoll - player.blockRate<0) {
+			System.out.println("You blocked the attack");
+			trueDamage = 0;
+		}
+			
 		else 
 			trueDamage = enemy.attackDamage * (1-(player.armor/100))*diceMultiplier; 
 			
 		System.out.println(enemy.name+" dealt "+trueDamage +" damage to you.");
 		player.hitPoints = player.hitPoints - trueDamage;
-			
-		
-		 
+				 
 	
+	}
+	public static void defend(User player, Enemy enemy) {
+		System.out.println("You now take %75 reduced damage on next round");
+		double diceMultiplier = diceRoll6();
+		int dodgeRoll = diceRoll100();
+		int blockRoll = diceRoll100();
+		double trueDamage;
+		if((dodgeRoll - player.dodgeChance)<0) {
+			System.out.println("You dodged the attack");
+			trueDamage = 0;
+		}
+		else if(blockRoll - player.blockRate<0) {
+			System.out.println("You blocked the attack");
+			trueDamage = 0;
+		}
+			
+		else 
+			trueDamage = 0.25*(enemy.attackDamage * (1-(player.armor/100))*diceMultiplier); 
+			
+		System.out.println(enemy.name+" dealt "+trueDamage +" damage to you.");
+		player.hitPoints = player.hitPoints - trueDamage;
+				 
+		
 	}
 	
 	
