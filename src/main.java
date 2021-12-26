@@ -21,8 +21,12 @@ public class main {
         	player = new BattleMage(temp[1]);
         }
        
-        menu.Menu.mainMenu(player);
-  
+       // menu.Menu.mainMenu(player);
+        player.print();
+        player.inventory[0] = 10;
+        menu.CraftMenu.Craft(player);
+        player.print();
+        
     }
 }
        

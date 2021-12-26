@@ -11,7 +11,11 @@ public class User extends Stats  {
     public double blockRate;
     public double dodgeChance;
     public int armor;
-    ArrayList<Integer> inventory = new ArrayList<Integer>(); 
+    public int[] inventory = new int[4];
+    //inventory[0] sword piece
+    //inventory[1] armor piece
+    //inventory[2] shield piece
+    //inventory[3] staff piece
     public String className;
     public Stats statistics;
 
@@ -25,7 +29,7 @@ public class User extends Stats  {
        this.blockRate= 0;        
        this.dodgeChance= 0;
        this.maxHitPoints = 0;
-       ArrayList<Integer> inventory = new ArrayList<Integer>(); 
+       //ArrayList<Integer> inventory = new ArrayList<Integer>(); 
        this.statistics= new Stats();
     }
     public User(double hitPoints, double pDamage, double mDamage, double bRate, double dChance, int armor ){
@@ -39,6 +43,12 @@ public class User extends Stats  {
         this.armor = armor;
        
      }
+    public void showInventory() {
+    	System.out.println(this.inventory[0] +" sword piece");
+		System.out.println(this.inventory[1] +" armor piece");
+		System.out.println(this.inventory[2] +" shield piece");
+		System.out.println(this.inventory[3] +" staff piece");
+    }
     
     public User(){
     	
