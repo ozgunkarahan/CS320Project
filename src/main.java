@@ -29,25 +29,25 @@ public class main {
             setclass biraz garip oldu, object yarıtılınca zaten set'leniyor aslında
             */
                 case "warrior" -> {
-                    Warrior warrior = new Warrior();
+                    Warrior warrior = new Warrior("Warrior");
                     warrior.setclassWarrior();
                     System.out.println("Selected class: Warrior\n");
                     setClass = true;
                 }
                 case "wizard" -> {
-                    Wizard wizard = new Wizard();
+                    Wizard wizard = new Wizard("Wizard");
                     wizard.setclassWizard();
                     System.out.println("Selected class: Wizard\n");
                     setClass = true;
                 }
                 case "ranger" -> {
-                    Ranger ranger = new Ranger();
+                    Ranger ranger = new Ranger("Ranger");
                     ranger.setclassRanger();
                     System.out.println("Selected class: Ranger\n");
                     setClass = true;
                 }
                 case "battlemage" -> {
-                    BattleMage battleMage = new BattleMage();
+                    BattleMage battleMage = new BattleMage("BattleMage");
                     battleMage.setclassBattleMage();
                     System.out.println("Selected class: BattleMage\n");
                     setClass = true;

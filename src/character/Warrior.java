@@ -4,9 +4,8 @@ import java.lang.String;
 
 public class Warrior extends User {
     ArrayList<String> spellListWarrior;
-    public Warrior(String name,String classname){
-}  
-    public Warrior() {
+
+    public Warrior(String nickname) {
     	this.hitPoints = 100;
     	this.maxHitPoints = 100;
     	this.magicRate = 0;
@@ -14,10 +13,10 @@ public class Warrior extends User {
     	this.blockRate = 10;
     	this.className = "Warrior";
     	this.physicalDamage = 10;
+    	this.nickname = nickname;
     	
     }
-     public void setclassWarrior(String nickname){
-    	 this.nickname = nickname;
-       
+     public void setclassWarrior() {
+    	 
     }
 }
