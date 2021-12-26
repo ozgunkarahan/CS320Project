@@ -1,4 +1,6 @@
 import character.*;
+import combat.Enemy;
+
 import java.util.Scanner;
 
 public class main {
@@ -26,7 +28,10 @@ public class main {
         player.inventory[0] = 10;
         menu.CraftMenu.Craft(player);
         player.print();
-        
+        Enemy enemy = new Enemy(50,10);
+        combat.DamageCalculation.calculatePhysicalDamage(player, enemy);
+        combat.DamageCalculation.calculateDamageTaken(player, enemy);
+        player.print();
     }
 }
        

@@ -38,7 +38,7 @@ public class User extends Stats  {
     	this.magicRate = mDamage;
     	this.blockRate = bRate;
     	this.dodgeChance = dChance;
-    	ArrayList<Integer> inventory = new ArrayList<Integer>(); 
+    	//ArrayList<Integer> inventory = new ArrayList<Integer>(); 
         this.statistics= new Stats();
         this.armor = armor;
        
@@ -79,7 +79,7 @@ public class User extends Stats  {
     }
     public void print() {
     	System.out.println("Your class : "+this.className);
-    	System.out.println("Your hp : "+ this.hitPoints +"/n"+ "Your physical damage: "+this.physicalDamage+"/n"+ "Your magical damage : "+this.magicRate+"/n"+
-    	"Block rate : %"+this.blockRate + " Armor: "+this.armor + "/n"+"Dodge chance: %"+this.dodgeChance);
+    	System.out.println("Your hp : "+ this.hitPoints +"\n"+ "Your physical damage: "+this.physicalDamage+"\n"+ "Your magical damage : "+this.magicRate+"\n"+
+    	"Block rate : %"+this.blockRate + " Armor: "+this.armor + "\n"+"Dodge chance: %"+this.dodgeChance);
     }
 }

@@ -9,5 +9,12 @@ public class Enemy {
 	public int armor;
 	public int magicResist;
 	
+	
+	public Enemy(double hp,double ad) {
+		this.hitPoints = hp;
+		this.attackDamage = ad;
+		
+	}
+	
 
 }

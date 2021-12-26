@@ -9,10 +9,10 @@ import java.util.*;
 
 public class DamageCalculation {
 	
-	public double diceRoll6() {
+	public static double diceRoll6() {
 		Random rand = new Random(); 
 		double diceRoll6 = rand.nextInt(6)+1;
-		System.out.println("You've rolled "+diceRoll6);
+		System.out.println("Rolling the dice "+diceRoll6);
 		if(diceRoll6 == 1)
 			diceRoll6 = 0.5;
 		else if (diceRoll6 == 2 || diceRoll6 == 3 || diceRoll6 == 4)
@@ -23,12 +23,12 @@ public class DamageCalculation {
 			diceRoll6 = 2;
 		return diceRoll6;
 	}
-	public int diceRoll100() {
+	public static int diceRoll100() {
 		Random rand = new Random();
 		return rand.nextInt(101);
 	}
 	
-	public void calculatePhysicalDamage(User player, Enemy enemy) {
+	public static void calculatePhysicalDamage(User player, Enemy enemy) {
 		double diceMultiplier = diceRoll6();
 		int dodgeRoll = diceRoll100();
 		int blockRoll = diceRoll100(); 
@@ -44,7 +44,7 @@ public class DamageCalculation {
 		
 		 
 	}
-	public void calculateDamageTaken(User player, Enemy enemy) {
+	public static void calculateDamageTaken(User player, Enemy enemy) {
 		
 		double diceMultiplier = diceRoll6();
 		int dodgeRoll = diceRoll100();
