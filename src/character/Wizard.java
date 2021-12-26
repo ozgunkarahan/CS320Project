@@ -4,6 +4,7 @@ import java.lang.String;
 
 public class Wizard extends User {
     ArrayList<String> spellListWizard;
+    public int cooldown;
     
     public Wizard(String nickname){
     	this.nickname=nickname;
@@ -14,6 +15,7 @@ public class Wizard extends User {
         this.blockRate= 0;        
         this.dodgeChance= 0;
         this.maxHitPoints = 80;
+        this.cooldown = 0;
 
 }
 
