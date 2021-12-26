@@ -11,8 +11,7 @@ public class User extends Stats  {
     public double blockRate;
     public double dodgeChance;
     public int armor;
-    public int magicResist;
-    public ArrayList<String> inventory; 
+    ArrayList<Integer> inventory = new ArrayList<Integer>(); 
     public String className;
     public Stats statistics;
 
@@ -20,22 +19,25 @@ public class User extends Stats  {
     public User(String name,String className){
        this.nickname=name;
        this.className=className;
-       double hitPoints;
-       double physicalDamage;
-       double magicRate;
-       double blockRate;        
-       double dodgeChance;
-       ArrayList<String> inventory;
+       this.hitPoints = 0;
+       this.physicalDamage= 0;
+       this.magicRate= 0;
+       this.blockRate= 0;        
+       this.dodgeChance= 0;
+       this.maxHitPoints = 0;
+       ArrayList<Integer> inventory = new ArrayList<Integer>(); 
        this.statistics= new Stats();
     }
-    public User(double hp, double pd, double md, double br, double dc){
-    	this.hitPoints = hp;
-    	this.physicalDamage = pd;
-    	this.magicRate = md;
-    	this.blockRate = br;
-    	this.dodgeChance = dc;
-        ArrayList<String> inventory;
+    public User(double hitPoints, double pDamage, double mDamage, double bRate, double dChance, int armor ){
+    	this.hitPoints = hitPoints;
+    	this.physicalDamage = pDamage;
+    	this.magicRate = mDamage;
+    	this.blockRate = bRate;
+    	this.dodgeChance = dChance;
+    	ArrayList<Integer> inventory = new ArrayList<Integer>(); 
         this.statistics= new Stats();
+        this.armor = armor;
+       
      }
     
     public User(){
@@ -58,13 +60,16 @@ public class User extends Stats  {
     public String getClass_name(){
         return this.className;
     }
-    public void deleteClass(String s){ // object mi yoksa string mi silecek?
-        
+    public void deleteClass(User s){
+    	// object mi yoksa string mi silecek?
+        s = null;
     }
     public void createUser(){// main de olması daha mantıklı olablir
         
     }
     public void print() {
-    	System.out.println("Hp: "+this.hitPoints+" PD: "+this.physicalDamage);
+    	System.out.println("Your class : "+this.className);
+    	System.out.println("Your hp : "+ this.hitPoints +"/n"+ "Your physical damage: "+this.physicalDamage+"/n"+ "Your magical damage : "+this.magicRate+"/n"+
+    	"Block rate : %"+this.blockRate + " Armor: "+this.armor + "/n"+"Dodge chance: %"+this.dodgeChance);
     }
 }

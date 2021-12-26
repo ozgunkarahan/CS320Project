@@ -5,22 +5,18 @@ import java.lang.String;
 public class Wizard extends User {
     ArrayList<String> spellListWizard;
     
-    public Wizard(String name,String classname){
-    super(name,classname);
-    double hitPoints=10;
-    double physicalDamage=10;
-    double magicRate=10;
-    double blockRate=10;        
-    double dodgeChance=10;   
-    double cooldown=10;
-    ArrayList<String> inventory;
-    ArrayList<String> spellListBattleMage;
-}
-    public Wizard() {
-        super(100, 10, 0, 20,0);
-        this.className = "Wizard";
+    public Wizard(String nickname){
+    	this.nickname=nickname;
+        this.className="Wizard";
+        this.hitPoints = 80;
+        this.physicalDamage= 0;
+        this.magicRate= 20;
+        this.blockRate= 0;        
+        this.dodgeChance= 0;
+        this.maxHitPoints = 80;
 
-    }
+}
+
     public void setclassWizard(){
         
     }

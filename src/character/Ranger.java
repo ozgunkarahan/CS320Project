@@ -4,22 +4,17 @@ import java.lang.String;
 
 public class Ranger extends User {
    ArrayList<String> spellListRanger;
-    public Ranger(String name,String classname){
-    super(name,classname);
-    double hitPoints;
-    double physicalDamage;
-    double magicRate;
-    double blockRate;        
-    double dodgeChance;   
-    double cooldown;
-    ArrayList<String> inventory;
-    ArrayList<String> spellListRanger;
-}
-    public Ranger() {
-        super(100, 10, 0, 20,0);
-        this.className = "Ranger";
-
-    }
+   public Ranger(String nickname) {
+   	this.hitPoints = 100;
+   	this.maxHitPoints = 100;
+   	this.magicRate = 0;
+   	this.armor = 0;
+   	this.dodgeChance = 10;
+   	this.className = "Warrior";
+   	this.physicalDamage = 10;
+   	this.nickname = nickname;
+   	
+   }
      public void setclassRanger(){
         
     }

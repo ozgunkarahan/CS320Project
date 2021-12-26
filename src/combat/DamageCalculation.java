@@ -28,19 +28,10 @@ public class DamageCalculation {
 		return rand.nextInt(101);
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public void calculatePhysicalDamage(User player, Enemy enemy) {
 		double diceMultiplier = diceRoll6();
 		int dodgeRoll = diceRoll100();
-		int blockRoll = diceRoll100();
+		int blockRoll = diceRoll100(); 
 		double trueDamage;
 		if((dodgeRoll - enemy.dodgeChance)<0 || blockRoll - enemy.blockRate<0)
 			trueDamage = 0;
@@ -54,6 +45,7 @@ public class DamageCalculation {
 		 
 	}
 	public void calculateDamageTaken(User player, Enemy enemy) {
+		
 		double diceMultiplier = diceRoll6();
 		int dodgeRoll = diceRoll100();
 		int blockRoll = diceRoll100();
