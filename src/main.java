@@ -1,43 +1,23 @@
 import character.*;
-import combat.Enemy;
-import menu.CraftMenu;
-
-import java.util.Scanner;
 
 public class main {
-    public static void main(String args[]) {
-    	String temp[] = new String[2];
-    	User player = null;
-        temp = menu.Menu.startGame();
-        System.out.println(temp[0] + " "+ temp[1]);
-        if(temp[0].equals("warrior")) {
-        	player = new Warrior(temp[1]);
-        }
-        else if (temp[0].equals("wizard")) {
-        	player = new Wizard(temp[1]);
-        }
-        else if(temp[0].equals("ranger")) {
-        	player = new Ranger(temp[1]);
-        	
-        }
-        else {
-        	player = new BattleMage(temp[1]);
-        }
-       
+
+    public static void main(String[] args) {
+
+        User player;
+        String[] playerData;
+
+        playerData = menu.Menu.startGame();
+
+        player = switch (playerData[0]) {
+            case "warrior" -> new Warrior(playerData[1]);
+            case "wizard" -> new Wizard(playerData[1]);
+            case "ranger" -> new Ranger(playerData[1]);
+            case "battlemage" -> new BattleMage(playerData[1]);
+        };
+
         menu.Menu.mainMenu(player);
-        /*
-        player.print();
-        player.inventory[0] = 10;
-        CraftMenu.Craft(player);
-        player.print();
-        Enemy enemy = new Enemy(50,10);
-        combat.DamageCalculation.calculatePhysicalDamage(player, enemy);
-        combat.DamageCalculation.calculateDamageTaken(player, enemy);
-        player.print();
-        */
-        
     }
 }
-   
     
 

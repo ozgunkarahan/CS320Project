@@ -18,3 +18,4 @@ CS320Project.iml
 .idea/workspace.xml
 .idea/vcs.xml
 .idea/modules.xml
+*.class
