@@ -1,3 +1,8 @@
+/*
+CS320 Project - Path of Adventurer
+Ozgun Karahan, Mert Tan, Nursen Yildirim, Anil Uzel
+ */
+
 import character.*;
 
 public class main {
@@ -9,6 +14,7 @@ public class main {
 
         playerData = menu.Menu.startGame();
 
+        // Creates a player class object based on the class chosen by the user
         player = switch (playerData[0]) {
             case "warrior" -> new Warrior(playerData[1]);
             case "wizard" -> new Wizard(playerData[1]);

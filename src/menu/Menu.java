@@ -1,74 +1,98 @@
 package menu;
 
+import character.User;
 import java.util.Scanner;
 
-import character.BattleMage;
-import character.Ranger;
-import character.User;
-import character.Warrior;
-import character.Wizard;
-
 public class Menu {
-	
+
 	public static String[] startGame() {
-		System.out.println("WIP: Welcome message!\n");
 
-        /*
-        createUser() kullanmadım, kullanacaksak ya main'de olacak ya da setNickname()'den önce
-         */
-        User user = new User();
-        Scanner scanner =new Scanner(System.in);
+		// Introduction message
+		System.out.println("""
+				Welcome to Path of Adventurer!
+				PoA is a simple text-based RPG where you can choose from 4 available classes.
+				Your character can level up and spend resources to get stronger
+				 in order to fight increasingly harder enemies and a final boss.
+				You can find more information on how the game works once you create a character.
+				""");
 
-        // Set a nickname for the user
-        System.out.print("Please enter a nickname: ");
-        String nickname = scanner.nextLine();
-        user.setNickname(nickname);
-        System.out.println("Nickname set to: " + nickname + "\n");
+		User player = new User();
+		Scanner scanner =new Scanner(System.in);
 
-        // Set a class for the user
-        System.out.println("WIP: Class introduction..");
-        System.out.println("Available classes: Warrior, Wizard, Ranger, BattleMage");
-        System.out.print("Please select a class from available classes: ");
-        String className = scanner.nextLine();
-        boolean setClass = false;
-        while (!setClass) {
-            switch (className.toLowerCase()) {
-            /*
-            setclass biraz garip oldu, object yarıtılınca zaten set'leniyor aslında
-            */
-                case "warrior" -> {
-                   
-                    System.out.println("Selected class: Warrior\n");
-                    setClass = true;
-                }
-                case "wizard" -> {
-                    
-                    System.out.println("Selected class: Wizard\n");
-                    setClass = true;
-                }
-                case "ranger" -> {
-                    
-                    System.out.println("Selected class: Ranger\n");
-                    setClass = true;
-                }
-                case "battlemage" -> {
-                   
-                    System.out.println("Selected class: BattleMage\n");
-                    setClass = true;
-                }
-                default -> {
-                    System.out.println("\nInvalid input!");
-                    System.out.println("Available classes: Warrior, Wizard, Ranger, BattleMage");
-                    System.out.print("Please select a class from available classes: ");
-                    className = scanner.nextLine();
-                }
-            }
-        }
-        
-        String[] returnUser = new String[2];
-        returnUser[0] = className;
-        returnUser[1] = nickname;
-        return returnUser;
+		// Set a nickname for the user
+		System.out.print("Please enter a nickname: ");
+		String nickname = scanner.nextLine();
+		player.setNickname(nickname);
+		System.out.println("Nickname set to: " + nickname + "\n");
+
+		// Set a class for the user
+		System.out.print("""
+				Now, you can choose between 4 classes which have different attributes and spells.
+				Please type 'info' if you want to see details of each class.
+				Available classes: Warrior, Wizard, Ranger, BattleMage
+				Please select a class from available classes:\s""");
+		String className = scanner.nextLine();
+
+		boolean setClass = false;
+		while (!setClass) {
+
+			switch (className.toLowerCase()) {
+
+				case "warrior" -> {
+
+					System.out.println("Selected class: Warrior\n");
+					setClass = true;
+				}
+				case "wizard" -> {
+
+					System.out.println("Selected class: Wizard\n");
+					setClass = true;
+				}
+				case "ranger" -> {
+
+					System.out.println("Selected class: Ranger\n");
+					setClass = true;
+				}
+				case "battlemage" -> {
+
+					System.out.println("Selected class: BattleMage\n");
+					setClass = true;
+				}
+				case "info" -> {
+					System.out.print("""
+							Class information:
+
+							Warrior is a durable class with high HP, high defenses, moderate physical damage and
+							 offers utility spells in order to stay alive for longer compared to other classes.
+
+							Wizard is a magic class with medium HP, low defenses, high magical damage and while it isn't
+							 a durable class, it has some self healing capabilities while using various magic spells.
+
+							Ranger is a potent class with low HP, low defenses with high physical damage but has it a
+							high dodge chance which can negate enemy attacks completely while dealing a lot of damage.
+
+							Battle Mage is a balanced class with medium HP, medium defenses, medium mixed damage and
+							 it has both offensive and defensive spells for different combat situations.
+
+							Available classes: Warrior, Wizard, Ranger, BattleMage
+							Please select a class from available classes:\s""");
+					className = scanner.nextLine();
+				}
+				default -> {
+					System.out.print("""
+       
+							Invalid input!
+							Please type 'info' if you want to see details of each class.
+							Available classes: Warrior, Wizard, Ranger, BattleMage
+							Please select a class from available classes:\s""");
+					className = scanner.nextLine();
+				}
+			}
+		}
+		String[] playerData = new String[2];
+		playerData[0] = className;
+		playerData[1] = nickname;
+		return playerData;
 	}
 	
 	public static void mainMenu(User player) {
