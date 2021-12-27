@@ -1,4 +1,7 @@
 package character;
+
+import combat.Enemy;
+
 public class Stats {
     int level;
     double experience;
@@ -13,19 +16,29 @@ public class Stats {
        this.enemyDefeatCount=0;
     }
     public void gainLevel(){
-       this.level=level+1;
+       if(Math.sqrt(this.experience)==this.level||Math.sqrt(this.experience)>this.level)
+    	   this.level=(int) Math.sqrt(this.experience);
     }
     public void increaseEnemyDefeat(){
         this.enemyDefeatCount= enemyDefeatCount +1;
     }
-    public void addCurrency(){
+    public void addCurrency(Enemy enemy){
+    	this.currency = this.currency +enemy.rewardCurrency;
         
     }       
     public void removeCurrency(){
         
     }        
-    public void gainExperience(){
+    public void gainExperience(Enemy enemy){
+    	this.experience = this.experience+enemy.rewardExperience;
+    	
         
+    }
+    public void updateStats(Enemy enemy) {
+    	gainExperience(enemy);
+    	addCurrency(enemy);
+    	increaseEnemyDefeat();
+    	gainLevel();
     }
     public void showStats(){
         System.out.println("--------Example Stats Screen--------");

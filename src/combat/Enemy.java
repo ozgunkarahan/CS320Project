@@ -11,7 +11,18 @@ public class Enemy {
 	public int armor;
 	public int magicResist;
 	public double playerLevelMultiplier;
+	public double rewardExperience;
+	public int rewardCurrency;
+	public int materialDropIndex;
+	public int materialDropAmount;
 	
+	public Enemy() {
+		this.rewardExperience = 5;
+		this.rewardCurrency = 10;
+		this.materialDropAmount = 2;
+		this.materialDropIndex = 1;
+				
+	}
 	
 	public double adjustAttackDamage(User player) {
 		this.playerLevelMultiplier = this.attackDamage*(player.getLevel()*1/10);

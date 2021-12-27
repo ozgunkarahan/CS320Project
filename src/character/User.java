@@ -2,6 +2,8 @@ package character;
 import java.lang.String;
 import java.util.ArrayList;
 
+import combat.Enemy;
+
 public class User extends Stats  {
     String nickname;
     public  double hitPoints;
@@ -48,6 +50,9 @@ public class User extends Stats  {
 		System.out.println(this.inventory[1] +" armor piece");
 		System.out.println(this.inventory[2] +" shield piece");
 		System.out.println(this.inventory[3] +" staff piece");
+    }
+    public void InventoryReward(Enemy enemy) {
+    	this.inventory[enemy.materialDropIndex] = this.inventory[enemy.materialDropIndex]+enemy.materialDropAmount;
     }
     
     public User(){

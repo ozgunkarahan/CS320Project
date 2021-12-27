@@ -75,12 +75,15 @@ public class CombatMenu {
 
             // Enemy turn
             else if (enemyAlive) {
-                dmgCal.calculateDamageTaken(player,enemy);
+                DamageCalculation.calculateDamageTaken(player,enemy);
                 if (player.hitPoints <= 0) playerAlive = false;
             }
             else {
             	System.out.println("WIP: Player won. (rewards need to be added)");
             	combatActive = false;
+            	player.updateStats(enemy);
+            	player.InventoryReward(enemy);
+            	player.showStats();
             }
 
             if (playerAlive) playerTurn = true;
