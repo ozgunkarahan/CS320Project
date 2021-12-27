@@ -18,6 +18,8 @@ public class Wizard extends User {
         this.cooldown = 0;
         this.cooldownArray[0] = 0;
         this.spellArray[0]="Fireball";
+        this.spellArray[1]="Frostbite";
+        this.cooldownArray[1] = 0;
 
 }
 

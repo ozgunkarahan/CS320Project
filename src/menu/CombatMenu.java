@@ -79,6 +79,7 @@ public class CombatMenu {
             // Enemy turn
             else if (enemyAlive) {
                 DamageCalculation.calculateDamageTaken(player,enemy);
+                player.print();
                 for(int i = 0; i<3;i++) {
                 	if(player.cooldownArray[i]<=0) {
                 		player.cooldownArray[i]=0;

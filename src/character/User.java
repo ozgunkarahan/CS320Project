@@ -88,9 +88,11 @@ public class User extends Stats  {
         
     }
     public void print() {
+    	System.out.println("-------------------------------");
     	System.out.println("Your class : "+this.className);
     	System.out.println("Your hp : "+ this.hitPoints +"\n"+ "Your physical damage: "+this.physicalDamage+"\n"+ "Your magical damage : "+this.magicRate+"\n"+
     	"Block rate : %"+this.blockRate + " Armor: "+this.armor + "\n"+"Dodge chance: %"+this.dodgeChance);
+    	System.out.println("-------------------------------");
     }
     public void showSpells() {
     	for(int i = 0; i<2; i++) {
