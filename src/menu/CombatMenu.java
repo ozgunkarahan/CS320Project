@@ -51,6 +51,8 @@ public class CombatMenu {
                     }
                     case "item" -> {
                         System.out.println("\nWIP: Use item\n");
+                        menu.InventoryMenu.inventoryMenu(player);
+                        
                         select = "main";
                         playerTurn = false;
                     }

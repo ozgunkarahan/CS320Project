@@ -13,11 +13,14 @@ public class User extends Stats  {
     public double blockRate;
     public double dodgeChance;
     public int armor;
-    public int[] inventory = new int[4];
+    public int[] inventory = new int[7];
     //inventory[0] sword piece
     //inventory[1] armor piece
     //inventory[2] shield piece
     //inventory[3] staff piece
+    //inventory[4] small health potion
+    //inventory[5] medium health potion
+    //inventory[6] large health potion
     public String className;
     public Stats statistics;
 

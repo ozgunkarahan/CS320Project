@@ -98,6 +98,7 @@ public class Menu {
 	                }
 	                case "inventory" -> {
 	                    System.out.println("\nWIP: Switch to inventory menu\n");
+	                    menu.InventoryMenu.inventoryMenu(player);
 	                    selectMenu = "main";
 	                }
 	                case "shop" -> {
