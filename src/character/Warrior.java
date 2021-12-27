@@ -8,7 +8,7 @@ public class Warrior extends User {
     public Warrior(String nickname) {
     	this.hitPoints = 100;
     	this.maxHitPoints = 100;
-    	this.magicRate = 0;
+    	this.magicRate = 5;
     	this.armor = 10;
     	this.blockRate = 10;
     	this.className = "Warrior";

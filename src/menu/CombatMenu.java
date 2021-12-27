@@ -46,9 +46,9 @@ public class CombatMenu {
                     }
                     case "spell" -> {
                         System.out.println("\nWIP: Use spell\n");
-                        DamageCalculation.useSpell(player,enemy);
+                        
                         select = "main";
-                        playerTurn = false;
+                        playerTurn =DamageCalculation.useSpell(player,enemy);
                     }
                     case "item" -> {
                         System.out.println("\nWIP: Use item\n");
@@ -79,6 +79,13 @@ public class CombatMenu {
             // Enemy turn
             else if (enemyAlive) {
                 DamageCalculation.calculateDamageTaken(player,enemy);
+                for(int i = 0; i<3;i++) {
+                	if(player.cooldownArray[i]<=0) {
+                		player.cooldownArray[i]=0;
+                	}
+                	else
+                		player.cooldownArray[i]--;
+                }
                 if (player.hitPoints <= 0) playerAlive = false;
             }
             else {

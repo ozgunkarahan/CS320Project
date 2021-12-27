@@ -111,7 +111,7 @@ public class DamageCalculation {
 		}
 		return choice;
 	}
-	public static void useSpell(User player,  Enemy enemy) {
+	public static boolean useSpell(User player,  Enemy enemy) {
 		String index = getSpellIndex(player);
 		int realIndex = Integer.parseInt(index)-1;
 		if(player.cooldownArray[realIndex]<=0) {
@@ -121,11 +121,13 @@ public class DamageCalculation {
 			
 			
 			
-			
+			return false;
 		}
-		else
+		else {
 			System.out.println(player.spellArray[realIndex] +" is on cooldown for "+player.cooldownArray[realIndex]+" rounds.");
-		
+			return true;
+		}
+			
 		
 		
 	}
@@ -137,6 +139,7 @@ public class DamageCalculation {
 		if(dodgeRoll-enemy.dodgeChance>0) {
 			trueDamage = calculateSpellMult(player,realIndex)*diceMultiplier*(1-(enemy.magicResist/100))*player.magicRate;
 			enemy.hitPoints = enemy.hitPoints - trueDamage;
+			System.out.println("You've dealt "+trueDamage + "damage to "+enemy.name);
 			
 		}
 			
