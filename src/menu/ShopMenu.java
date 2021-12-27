@@ -29,11 +29,12 @@ import character.User;
 			System.out.println("6 - Medium health potion: "+COST_OF_MHP+"$");
 			System.out.println("7 - Large health potion: "+COST_OF_LHP+"$");
 			System.out.println("Pick an item to buy: ");
-			int choice = scanner.nextInt();
+			String choice = scanner.nextLine();
+			
 			boolean run = true;
 	        while (run) {
 	            switch (choice) {
-	                case 1 -> {
+	                case "1" -> {
 	                    if (player.currency >= COST_OF_SWORD) {
 	                    	player.inventory[0] = player.inventory[0]+1;
 	                        player.currency = player.currency - COST_OF_SWORD;
@@ -43,7 +44,7 @@ import character.User;
 	                    }
 	                    run = false;
 	                }
-	                case 2 -> {
+	                case "2" -> {
 	                    if (player.currency >= COST_OF_ARMOR) {
 	                    	player.inventory[1] = player.inventory[1]+1;
 	                        player.currency = player.currency - COST_OF_ARMOR;
@@ -53,8 +54,8 @@ import character.User;
 	                    }
 	                    run = false;
 	                }
-	                case 3 -> {
-	                    if (choice == 3) {
+	                case "3" -> {
+	                    
 	                        if (player.currency >= COST_OF_SHIELD) {
 	                        	player.inventory[2] = player.inventory[2]+1;
 	                            player.currency = player.currency - COST_OF_SHIELD;
@@ -62,10 +63,10 @@ import character.User;
 	                        } else {
 	                            System.out.println("You don't have enough currency.");
 	                        }
-	                    }
+	                    
 	                    run = false;
 	                }
-	                case 4 -> {
+	                case "4" -> {
 	                    if(player.currency >= COST_OF_STAFF) {
 	                    	player.inventory[3] = player.inventory[3]+1;
 	                        player.currency = player.currency - COST_OF_STAFF;
@@ -75,7 +76,7 @@ import character.User;
 	                    }
 	                    run = false;
 	                }
-	                case 5 -> {
+	                case "5" -> {
 	                    if(player.currency >= COST_OF_SHP) {
 	                    	player.inventory[4] = player.inventory[4]+1;
 	                        player.currency = player.currency - COST_OF_SHP;
@@ -85,7 +86,7 @@ import character.User;
 	                    }
 	                    run = false;
 	                }
-	                case 6 -> {
+	                case "6" -> {
 	                    if(player.currency >= COST_OF_MHP) {
 	                    	player.inventory[5] = player.inventory[5]+1;
 	                        player.currency = player.currency - COST_OF_MHP;
@@ -95,7 +96,7 @@ import character.User;
 	                    }
 	                    run = false;
 	                }
-	                case 7 -> {
+	                case "7" -> {
 	                    if(player.currency >= COST_OF_LHP) {
 	                    	player.inventory[6] = player.inventory[6]+1;
 	                        player.currency = player.currency - COST_OF_LHP;
@@ -107,7 +108,7 @@ import character.User;
 	                }
 	                default -> {
 	                    System.out.println("Pick a valid number.");
-	                    run= false;
+	                    choice = scanner.nextLine();
 	                }
 	            }
 	        }
