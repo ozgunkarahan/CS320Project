@@ -16,8 +16,20 @@ public class Stats {
        this.enemyDefeatCount=0;
     }
     public void gainLevel(){
-       if(Math.sqrt(this.experience)==this.level||Math.sqrt(this.experience)>this.level)
-    	   this.level=(int) Math.sqrt(this.experience);
+       if(this.experience>0 && this.experience<4) 
+    	   this.level = 1;
+       else if(this.experience>=4 && this.experience<9) 
+    	   this.level = 2;
+       else if(this.experience>=9 && this.experience<16)
+    	   this.level=3;
+       else if(this.experience>=16 && this.experience<25)
+    	   this.level=4;
+       else if(this.experience>=25 && this.experience<36)
+    	   this.level=5;
+       else
+    	   this.level=6;
+       
+       
     }
     public void increaseEnemyDefeat(){
         this.enemyDefeatCount= enemyDefeatCount +1;
