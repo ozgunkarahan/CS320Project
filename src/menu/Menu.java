@@ -103,6 +103,7 @@ public class Menu {
 	                }
 	                case "shop" -> {
 	                    System.out.println("\nWIP: Switch to shop menu\n");
+	                    ShopMenu.Shop(player);
 	                    selectMenu = "main";
 	                }
 	                case "craft" -> {
