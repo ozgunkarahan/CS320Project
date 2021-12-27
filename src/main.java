@@ -14,6 +14,7 @@ public class main {
             case "wizard" -> new Wizard(playerData[1]);
             case "ranger" -> new Ranger(playerData[1]);
             case "battlemage" -> new BattleMage(playerData[1]);
+            default -> null;
         };
 
         menu.Menu.mainMenu(player);
