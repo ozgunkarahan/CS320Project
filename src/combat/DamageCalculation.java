@@ -154,6 +154,8 @@ public class DamageCalculation {
 			mult = 1.2;
 		else if(player.spellArray[index].equals("Slash"))
 			mult = 1.1;
+		else if(player.spellArray[index].equals("Fireball"))
+			mult=1.5;
 		return mult;
 
 	}
