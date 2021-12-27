@@ -1,5 +1,7 @@
 package combat;
 
+import character.User;
+
 public class Enemy {
 	public double hitPoints;
 	public double attackDamage;
@@ -8,12 +10,16 @@ public class Enemy {
 	public String name;
 	public int armor;
 	public int magicResist;
+	public double playerLevelMultiplier;
 	
 	
-	public Enemy(double hp,double ad) {
-		this.hitPoints = hp;
-		this.attackDamage = ad;
-		
+	public double adjustAttackDamage(User player) {
+		this.playerLevelMultiplier = this.attackDamage*(player.getLevel()*1/10);
+		return this.attackDamage*this.playerLevelMultiplier;
+	}
+	
+	public void printEnemy() {
+		System.out.println("Enemy name: "+this.name+"\n"+" Remaining HP: "+this.hitPoints + "AD: "+this.attackDamage);
 	}
 	
 

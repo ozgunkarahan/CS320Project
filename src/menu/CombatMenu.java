@@ -5,13 +5,17 @@ import java.util.Scanner;
 import character.User;
 import combat.DamageCalculation;
 import combat.Enemy;
+import combat.EnemyGeneration;
+import combat.Skeleton;
 
 public class CombatMenu {
 
    
 	public static void CombatMenu(User player) {
 		Scanner scanner =new Scanner(System.in);
-    	Enemy enemy = new Enemy(100,10);
+		
+		Enemy enemy = EnemyGeneration.generateEnemy(player);
+    	enemy.printEnemy();
         System.out.println("\nWIP: Combat Menu");
         String select = "main";
         DamageCalculation dmgCal = new DamageCalculation();
@@ -34,7 +38,8 @@ public class CombatMenu {
                 }
                     case "attack" -> {
                         System.out.println("WIP: Basic attack");
-                        dmgCal.calculatePhysicalDamage(player, enemy);
+                        DamageCalculation.calculatePhysicalDamage(player, enemy);
+                        //DamageCalculation.calculateDamageTaken(player, enemy);
                         select = "main";
                         playerTurn = false;
                         System.out.println("-----------------" +enemy.hitPoints);
