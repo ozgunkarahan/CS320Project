@@ -14,6 +14,10 @@ public class Warrior extends User {
     	this.className = "Warrior";
     	this.physicalDamage = 10;
     	this.nickname = nickname;
+    	this.spellArray[0]="Slash";
+    	this.cooldownArray[0]=0;
+    	this.spellArray[1]="Riposte";
+    	this.cooldownArray[1]=0;
     	
     }
      public void setclassWarrior() {

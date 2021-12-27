@@ -20,7 +20,7 @@ public class Enemy {
 		this.rewardExperience = 5;
 		this.rewardCurrency = 10;
 		this.materialDropAmount = 2;
-		this.materialDropIndex = 1;
+		this.materialDropIndex = 1; //0-6
 				
 	}
 	

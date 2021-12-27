@@ -33,8 +33,11 @@ public class DamageCalculation {
 		int dodgeRoll = diceRoll100();
 		int blockRoll = diceRoll100(); 
 		double trueDamage;
-		if((dodgeRoll - enemy.dodgeChance)<0 || blockRoll - enemy.blockRate<0)
+		if((dodgeRoll - enemy.dodgeChance)<0 || blockRoll - enemy.blockRate<0) {
 			trueDamage = 0;
+			System.out.println("Enemy recieved no damage");
+		}
+			
 		else 
 			trueDamage = player.physicalDamage * (1-(enemy.armor/100))*diceMultiplier; 
 			
@@ -90,7 +93,66 @@ public class DamageCalculation {
 				 
 		
 	}
-	
-	
+	public static String getSpellIndex(User player) {
+		Scanner scan = new Scanner(System.in);
+		player.showSpells();
+		String choice;
+		while(true) {
+			
+			System.out.println("Select which skill you want to use");
+			choice = scan.nextLine();
+			if(choice.equals("1")||choice.equals("2"))
+				break;
+			else
+				System.out.println("Enter a valid option");
+			
 
+			
+		}
+		return choice;
+	}
+	public static void useSpell(User player,  Enemy enemy) {
+		String index = getSpellIndex(player);
+		int realIndex = Integer.parseInt(index)-1;
+		if(player.cooldownArray[realIndex]<=0) {
+			System.out.println("You've used "+player.spellArray[realIndex]);
+			calculateSpellDamage(player, enemy,realIndex);
+			player.cooldownArray[realIndex]= player.cooldownArray[realIndex]+3;
+			
+			
+			
+			
+		}
+		else
+			System.out.println(player.spellArray[realIndex] +" is on cooldown for "+player.cooldownArray[realIndex]+" rounds.");
+		
+		
+		
+	}
+	public static void calculateSpellDamage(User player, Enemy enemy, int realIndex) {
+		double diceMultiplier = diceRoll6();
+		int dodgeRoll = diceRoll100();
+		int blockRoll = diceRoll100(); 
+		double trueDamage;
+		if(dodgeRoll-enemy.dodgeChance>0) {
+			trueDamage = calculateSpellMult(player,realIndex)*diceMultiplier*(1-(enemy.magicResist/100))*player.magicRate;
+			enemy.hitPoints = enemy.hitPoints - trueDamage;
+			
+		}
+			
+			
+		else
+			System.out.println("Enemy dodged the "+player.spellArray[realIndex]);
+	}
+	
+	public static double calculateSpellMult(User player,int index) {
+		double mult = 1;
+		if(player.spellArray[index].equals("Riposte"))
+			mult = 1.2;
+		else if(player.spellArray[index].equals("Slash"))
+			mult = 1.1;
+		return mult;
+
+	}
+	
 }

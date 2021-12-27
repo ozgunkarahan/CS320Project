@@ -46,6 +46,7 @@ public class CombatMenu {
                     }
                     case "spell" -> {
                         System.out.println("\nWIP: Use spell\n");
+                        DamageCalculation.useSpell(player,enemy);
                         select = "main";
                         playerTurn = false;
                     }

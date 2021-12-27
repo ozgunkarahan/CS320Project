@@ -23,6 +23,8 @@ public class User extends Stats  {
     //inventory[6] large health potion
     public String className;
     public Stats statistics;
+    public int[]cooldownArray = new int[3];
+    public String[]spellArray = new String[3];
 
     
     public User(String name,String className){
@@ -89,5 +91,10 @@ public class User extends Stats  {
     	System.out.println("Your class : "+this.className);
     	System.out.println("Your hp : "+ this.hitPoints +"\n"+ "Your physical damage: "+this.physicalDamage+"\n"+ "Your magical damage : "+this.magicRate+"\n"+
     	"Block rate : %"+this.blockRate + " Armor: "+this.armor + "\n"+"Dodge chance: %"+this.dodgeChance);
+    }
+    public void showSpells() {
+    	for(int i = 0; i<2; i++) {
+    		System.out.println(i+1 +"."+this.spellArray[i] +" Cooldown remaining: "+this.cooldownArray[i]+"turns");
+    	}
     }
 }
