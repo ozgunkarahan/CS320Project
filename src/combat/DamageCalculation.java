@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class DamageCalculation {
 
-	private static Random rand;
+	private static Random rand = new Random();
 
 	public static double diceRoll(String name) {
 
