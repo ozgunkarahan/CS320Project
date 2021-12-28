@@ -34,6 +34,8 @@ public class Enemy {
 	}
 	
 	public void printEnemy() {
+		System.out.println("-------------------------------");
 		System.out.println("Enemy name: "+this.name+"\n"+" Remaining HP: "+this.hitPoints);
+		System.out.println("-------------------------------");
 	}
 }

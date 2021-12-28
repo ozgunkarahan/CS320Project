@@ -46,24 +46,28 @@ public class CombatMenu {
                         select = "main";
                         playerTurn = false;
                         enemy.printEnemy();
+                        
+                        
                     }
                     case "spell" -> {
                         select = "main";
                         playerTurn = DamageCalculation.useSpell(player,enemy);
                         enemy.printEnemy();
+                        
                     }
                     case "item" -> {
                         CharacterMenu.characterMenu(player);
                         select = "main";
                         playerTurn = false;
-                        enemy.printEnemy();
+                        
                     }
                     case "defend" -> {
                         System.out.println("Using defend.\n");
                         dmgCal.defend(player, enemy);
                         select = "main";
                         playerTurn = true;
-                        enemy.printEnemy();
+                        
+                        player.printPlayer();
                     }
                     case "flee" -> {
                         Random rand = new Random();
@@ -91,6 +95,7 @@ public class CombatMenu {
             // Enemy turn
             else if (enemyAlive) {
                 DamageCalculation.calculateDamageTaken(player,enemy);
+                player.printPlayer();
                 for(int i = 0; i<3;i++) {
                 	if(player.cooldownArray[i]<=0) {
                 		player.cooldownArray[i]=0;

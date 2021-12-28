@@ -203,8 +203,11 @@ public class Menu {
 
 					if (prompt.equalsIgnoreCase("Y")) {
 						// end game
+						player.showStats();
 						run = false;
+						System.out.println("Thank you for playing");
 						System.exit(0);
+						
 					}
 					else selectMenu = "main";
 				}

@@ -99,4 +99,9 @@ public class User extends Stats {
     		System.out.println(i+1 +"."+this.spellArray[i] +" Cooldown remaining: "+this.cooldownArray[i]+"turns");
     	}
     }
+    public void printPlayer() {
+    	System.out.println("-------------------------------");
+    	System.out.println(this.nickname +" the "+ this.className + "Remaining HP: "+this.hitPoints );
+    	System.out.println("-------------------------------");
+    }
 }
