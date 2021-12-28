@@ -5,13 +5,13 @@ import java.util.Scanner;
 	
 public class ShopMenu {
 
-	public static final int COST_OF_SWORD 	= 10;
-	public static final int COST_OF_ARMOR 	= 10;
-	public static final int COST_OF_SHIELD 	= 10;
-	public static final int COST_OF_STAFF 	= 10;
-	public static final int COST_OF_SHP 	= 10;
+	public static final int COST_OF_SWORD 	= 40;
+	public static final int COST_OF_ARMOR 	= 35;
+	public static final int COST_OF_SHIELD 	= 30;
+	public static final int COST_OF_STAFF 	= 50;
+	public static final int COST_OF_SHP 	= 5;
 	public static final int COST_OF_MHP 	= 10;
-	public static final int COST_OF_LHP 	= 10;
+	public static final int COST_OF_LHP 	= 20;
 
 	public static void Shop(User player) {
 

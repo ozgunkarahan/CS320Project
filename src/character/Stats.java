@@ -51,11 +51,12 @@ public class Stats {
     }
 
     public void showStats(){
-        System.out.println("--------Example Stats Screen--------");
+        System.out.println("-----------Stats-----------");
         System.out.println("Level :" + this.level +
                 "\nExperience: " + this.experience +
-                "\nCurrency: " + this.currency);
-        System.out.println("------------------------------------");
+                "\nCurrency: " + this.currency +
+                "\nEnemies defeated: " + this.enemyDefeatCount);
+        System.out.println("---------------------------");
     }
 
     public int getLevel() {

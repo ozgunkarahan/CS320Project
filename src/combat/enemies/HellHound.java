@@ -7,13 +7,13 @@ public class HellHound extends Enemy {
 
 	public HellHound(User player) {
 
-		this.attackDamage = 5;
+		this.attackDamage = 9;
 		this.attackDamage = this.attackDamage+(this.attackDamage*player.getLevel()*1/10);
 		this.name = "Hell Hound";
-		this.blockRate = 10;
-		this.dodgeChance = 0;
-		this.armor = 10;
+		this.blockRate = 20;
+		this.dodgeChance = 15;
+		this.armor = 0;
 		this.hitPoints = 50;
-		this.magicResist = 10;
+		this.magicResist = 0;
 	}
 }

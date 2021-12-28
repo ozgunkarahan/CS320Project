@@ -22,8 +22,8 @@ public class Enemy {
 	public boolean isBoss = false;
 	
 	public Enemy() {
-		this.rewardExperience = 5;
-		this.rewardCurrency = 10;
+		this.rewardExperience = rand.nextInt(5)+3;
+		this.rewardCurrency = rand.nextInt(15)+5;
 		this.materialDropAmount = rand.nextInt(3)+1;
 		this.materialDropIndex = rand.nextInt(7); //0-6
 	}
@@ -34,6 +34,6 @@ public class Enemy {
 	}
 	
 	public void printEnemy() {
-		System.out.println("Enemy name: "+this.name+"\n"+" Remaining HP: "+this.hitPoints + "AD: "+this.attackDamage);
+		System.out.println("Enemy name: "+this.name+"\n"+" Remaining HP: "+this.hitPoints);
 	}
 }

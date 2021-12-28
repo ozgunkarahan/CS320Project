@@ -19,14 +19,14 @@ public class CharacterMenu {
 
 	public static int getIndex() {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Choose what you want to use" );
+		System.out.print("Choose which item you want to use: ");
 		int selection;
 		while(true) {
 			selection = scan.nextInt();
 			if(selection == 1 || selection == 2 || selection ==3) {
 				break;
 			}
-			else System.out.println("Invalid choice type again");
+			else System.out.println("Invalid choice type again.");
 		}
 		return selection;
 	}
@@ -38,21 +38,21 @@ public class CharacterMenu {
 				if(player.hitPoints>player.maxHitPoints)
 					player.hitPoints = player.maxHitPoints;
 				player.inventory[index+3]--;
-				System.out.println("Used small health potion");
+				System.out.println("Used small health potion.");
 			}
 			else if(index==2) {
 				player.hitPoints = player.hitPoints+50;
 				if(player.hitPoints>player.maxHitPoints);
 					player.hitPoints = player.maxHitPoints;
 				player.inventory[index+3]--;
-				System.out.println("Used medium health potion");
+				System.out.println("Used medium health potion.");
 			}
 			else {
 				player.hitPoints = player.maxHitPoints;
 				player.inventory[index+3]--;
-				System.out.println("Used large health potion, healed to full hp");
+				System.out.println("Used large health potion, healed to full HP.");
 			}
 		}
-		else System.out.println("You don't have enough potions");
+		else System.out.println("You don't have enough potions!");
 	}
 }

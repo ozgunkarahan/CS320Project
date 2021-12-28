@@ -9,7 +9,7 @@ public class CraftMenu {
 
 		if(player.inventory[index] >=4) return true;
 		else {
-			System.out.println("You dont have enough materials");
+			System.out.println("You don't have enough materials!");
 			return false;
 		}
 	}
@@ -18,7 +18,7 @@ public class CraftMenu {
 
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Crafting menu in order to craft an item you have to "
-				+ "combine 4 pieces. You have : ");
+				+ "combine 4 pieces. You have: ");
 		player.showInventory();
 		System.out.println("Type what you want to combine (Type sword for combining sword pieces)");
 		String input = null;

@@ -28,7 +28,7 @@ public class Menu {
 
 		// Set a class for the user
 		System.out.print("""
-				Now, you can choose between 4 classes which have different attributes and skills.
+				Now, you can choose between 4 classes which have different attributes and spells.
 				Please type 'info' if you want to see details of each class.
 				Available classes: Warrior, Wizard, Ranger, BattleMage
 				Please select a class from available classes:\s""");
@@ -62,17 +62,14 @@ public class Menu {
        
 							Class information:
 
-							Warrior is a durable class with high HP, high defenses, moderate physical damage and
-							offers utility skills in order to stay alive for longer compared to other classes.
+							Warrior is a durable class with high HP, high defenses, moderate physical damage.
 
-							Wizard is a magic class with medium HP, low defenses, high magical damage and while it isn't
-							a durable class, it has some self healing capabilities while using various magic skills.
+							Wizard is a magic class with medium HP, low defenses, high magical damage.
 
 							Ranger is a potent class with low HP, low defenses with high physical damage but has it a
 							high evasion chance which can negate enemy attacks completely while dealing a lot of damage.
 
-							Battle Mage is a balanced class with medium HP, medium defenses, medium mixed damage and
-							it has both offensive and defensive skills for different combat situations.
+							Battle Mage is a balanced class with medium HP, medium defenses, medium mixed damage.
 
 							Available classes: Warrior, Wizard, Ranger, BattleMage
 							Please select a class from available classes:\s""");
@@ -137,10 +134,10 @@ public class Menu {
 				}
 				case "rest" -> {
 					String prompt = null;
-					System.out.println("\nYou can rest in order to fully restore your character's HP and MP for 100 currency." +
+					System.out.println("\nYou can rest in order to fully restore your character's HP for 10 currency." +
 							"\nYour currency: " + player.currency);
 
-					if (player.currency < 100) {
+					if (player.currency < 10) {
 						System.out.println("You don't have enough currency.");
 						selectMenu = "main";
 					}
@@ -150,7 +147,7 @@ public class Menu {
 
 						if (prompt.equalsIgnoreCase("Y")) {
 							player.hitPoints = player.maxHitPoints;
-							player.currency -= 100;
+							player.currency -= 10;
 						}
 						else selectMenu = "main";
 					}
@@ -162,7 +159,7 @@ public class Menu {
 							
 							Encounter -> The game will switch to combat menu and you will fight a randomly generated enemy.
 							Character -> The game will switch to character menu and you will be able to see all the information related
-										 to your character like attributes, skills, inventory and currency.
+										 to your character like attributes, spells, inventory and currency.
 							Shop -> The game will switch to shop menu and you will be able to buy items from shop in exchange for currency.
 							Craft -> The game will switch to craft menu and you will be able to craft items that increase your stats.
 							Rest -> Fully restore your character's HP and MP in exchange for currency.
@@ -174,22 +171,20 @@ public class Menu {
 							The character attributes in this game are:
 							Hit Points (HP) -> Your HP determines the amount of points your character can take.
 											   You will lose the game if it reaches 0.
-							Mana Points (MP) -> Your MP is used to use your character's skills. You won't be able to use a skill
-												if you don't meet MP requirements.
-							Attack Damage (AD) -> Your AD is used when calculating damage dealt from physical weapons and skills.
-							Ability Power (AP) -> Your AP is used when calculating damage dealt from magical weapons and skills.
-							Defense (DEF) -> Your character takes % less damage from enemy attacks based on the amount of DEF they have.
-							Evasion (EV) -> Your character has % chance to evade an enemy attack completely.
-							Block (BL) -> Your character has % chance to block (DEF*2)% of the damage from enemy attacks.
+							Attack Damage (AD) -> Your AD is used when calculating damage dealt from physical weapons and spells.
+							Magic Rate (MR) -> Your MR is used when calculating damage dealt from magical weapons and spells.
+							Armor (AR) -> Your character takes % less damage from enemy attacks based on the amount of AR they have.
+							Dodge (DG) -> Your character has % chance to evade an enemy attack completely.
+							Block (BL) -> Your character has % chance to block (AR*2)% of the damage from enemy attacks.
 							
-							You can see other information about your character like level, skills and inventory from Character Menu.
+							You can see other information about your character like level, spells and inventory from Character Menu.
 							
 							COMBAT BASICS
 							
 							Combat in this game is played in turns. Your character always goes first and choose from various actions
-							like basic attack, use skills or items, defend yourself from next enemy attack or flee the combat.
-							Once you play your turn, the enemy will attack. While the enemies don't have skills, they do have
-							different amounts of physical and magical damage resistances so you should take that into consideration.
+							like basic attack, use spells or items, defend yourself from next enemy attack or flee the combat.
+							Once you play your turn, the enemy will attack. While the enemies don't have spells, they do have
+							different amounts of physical and magical damage resistances.
 							
 							You will lose the game if your character's HP reaches 0 before the enemy's does and you will earn EXP,
 							currency and crafting materials if you win. EXP is used to level up your character.

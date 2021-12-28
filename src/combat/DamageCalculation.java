@@ -60,7 +60,7 @@ public class DamageCalculation {
 
 	public static void defend(User player, Enemy enemy) {
 
-		System.out.println("You now take %75 reduced damage on next round");
+		System.out.println("You now take %75 reduced damage on this round");
 		double diceMultiplier = diceRoll(enemy.name);
 		int dodgeRoll = rand.nextInt(101);
 		int blockRoll = rand.nextInt(101);
@@ -135,6 +135,10 @@ public class DamageCalculation {
 		else if(player.spellArray[index].equals("Slash")) mult = 1.1;
 		else if(player.spellArray[index].equals("Fireball")) mult=1.5;
 		else if(player.spellArray[index].equals("Frostbite")) mult=1.1;
+		else if(player.spellArray[index].equals("Arrow Nova")) mult=1.7;
+		else if(player.spellArray[index].equals("Lightning Arrow")) mult=1.3;
+		else if(player.spellArray[index].equals("Absolution")) mult=1.4;
+		else if(player.spellArray[index].equals("Smite")) mult=1.2;
 		return mult;
 	}
 }
