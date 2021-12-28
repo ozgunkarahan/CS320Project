@@ -5,31 +5,25 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class DamageCalculation {
-	
-	public static double diceRoll6(String name) {
 
-		Random rand = new Random(); 
-		double diceRoll6 = rand.nextInt(6) + 1;
-		System.out.println(name +" rolling the dice "+diceRoll6);
+	private static Random rand;
 
-		if(diceRoll6 == 1) diceRoll6 = 0.5;
-		else if (diceRoll6 == 2 || diceRoll6 == 3 || diceRoll6 == 4) diceRoll6 = 1;
-		else if (diceRoll6 == 5) diceRoll6 = 1.5;
-		else diceRoll6 = 2;
+	public static double diceRoll(String name) {
 
-		return diceRoll6;
-	}
+		double diceRoll = rand.nextInt(6) + 1;
+		System.out.println(name +" rolling the dice "+diceRoll);
 
-	public static int diceRoll100() {
-		Random rand = new Random();
-		return rand.nextInt(101);
+		if (diceRoll == 1) return 0.5;
+		else if (diceRoll == 5) return 1.5;
+		else if (diceRoll == 6) return 2;
+		else return 1;
 	}
 	
 	public static void calculatePhysicalDamage(User player, Enemy enemy) {
 
-		double diceMultiplier = diceRoll6(player.getNickname());
-		int dodgeRoll = diceRoll100();
-		int blockRoll = diceRoll100(); 
+		double diceMultiplier = diceRoll(player.getNickname());
+		int dodgeRoll = rand.nextInt(101);
+		int blockRoll = rand.nextInt(101);
 		double trueDamage;
 
 		if((dodgeRoll - enemy.dodgeChance)<0 || blockRoll - enemy.blockRate<0) {
@@ -44,9 +38,9 @@ public class DamageCalculation {
 
 	public static void calculateDamageTaken(User player, Enemy enemy) {
 		
-		double diceMultiplier = diceRoll6(enemy.name);
-		int dodgeRoll = diceRoll100();
-		int blockRoll = diceRoll100();
+		double diceMultiplier = diceRoll(enemy.name);
+		int dodgeRoll = rand.nextInt(101);
+		int blockRoll = rand.nextInt(101);
 		double trueDamage;
 
 		if((dodgeRoll - player.dodgeChance)<0) {
@@ -67,9 +61,9 @@ public class DamageCalculation {
 	public static void defend(User player, Enemy enemy) {
 
 		System.out.println("You now take %75 reduced damage on next round");
-		double diceMultiplier = diceRoll6(enemy.name);
-		int dodgeRoll = diceRoll100();
-		int blockRoll = diceRoll100();
+		double diceMultiplier = diceRoll(enemy.name);
+		int dodgeRoll = rand.nextInt(101);
+		int blockRoll = rand.nextInt(101);
 		double trueDamage;
 
 		if((dodgeRoll - player.dodgeChance)<0) {
@@ -121,9 +115,9 @@ public class DamageCalculation {
 
 	public static void calculateSpellDamage(User player, Enemy enemy, int realIndex) {
 
-		double diceMultiplier = diceRoll6(player.getNickname());
-		int dodgeRoll = diceRoll100();
-		int blockRoll = diceRoll100(); 
+		double diceMultiplier = diceRoll(player.getNickname());
+		int dodgeRoll = rand.nextInt(101);
+		int blockRoll = rand.nextInt(101);
 		double trueDamage;
 
 		if(dodgeRoll-enemy.dodgeChance>0) {
