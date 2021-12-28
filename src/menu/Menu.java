@@ -209,6 +209,7 @@ public class Menu {
 					if (prompt.equalsIgnoreCase("Y")) {
 						// end game
 						run = false;
+						System.exit(0);
 					}
 					else selectMenu = "main";
 				}

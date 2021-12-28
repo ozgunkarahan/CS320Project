@@ -4,8 +4,8 @@ import combat.Enemy;
 
 public class Stats {
 
-    int level;
-    double experience;
+    public int level;
+    public double experience;
     public double currency;
     double enemyDefeatCount;
 

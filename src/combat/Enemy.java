@@ -19,6 +19,7 @@ public class Enemy {
 	public int materialDropIndex;
 	public int materialDropAmount;
 	private Random rand = new Random();
+	public boolean isBoss = false;
 	
 	public Enemy() {
 		this.rewardExperience = 5;

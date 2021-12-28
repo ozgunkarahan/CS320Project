@@ -1,9 +1,9 @@
 package menu;
 
 import character.User;
-import combat.DamageCalculation;
-import combat.Enemy;
-import combat.EnemyGeneration;
+import combat.*;
+import combat.enemies.Boss;
+
 import java.util.Scanner;
 
 public class CombatMenu {
@@ -11,7 +11,12 @@ public class CombatMenu {
 	public static void CombatMenu(User player) {
 
 		Scanner scanner =new Scanner(System.in);
-		Enemy enemy = EnemyGeneration.generateEnemy(player);
+        Enemy enemy = null;
+        if (player.getLevel() == 6) {
+            enemy = new Boss(player);
+        }
+        else enemy = EnemyGeneration.generateEnemy(player);
+
     	enemy.printEnemy();
 
         System.out.println("\nWIP: Combat Menu");
@@ -100,9 +105,14 @@ public class CombatMenu {
             else {
                 // WIP Game over
                 System.out.println("WIP: Player lost. (returning to main menu for now)");
+                System.exit(0);
                 combatActive = false;
             }
         }
-        System.out.println("WIP: Combat ended. Returning to main menu.");
+        if (enemy.isBoss == false) System.out.println("WIP: Combat ended. Returning to main menu.");
+        else {
+            System.out.println("You have beaten the game!");
+            System.exit(0);
+        }
     }
 }
