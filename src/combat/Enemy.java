@@ -1,5 +1,7 @@
 package combat;
 
+import java.util.Random;
+
 import character.User;
 
 public class Enemy {
@@ -16,12 +18,13 @@ public class Enemy {
 	public int rewardCurrency;
 	public int materialDropIndex;
 	public int materialDropAmount;
+	private Random rand = new Random();
 	
 	public Enemy() {
 		this.rewardExperience = 5;
 		this.rewardCurrency = 10;
-		this.materialDropAmount = 2;
-		this.materialDropIndex = 1; //0-6
+		this.materialDropAmount = rand.nextInt(3)+1;
+		this.materialDropIndex = rand.nextInt(7); //0-6
 	}
 	
 	public double adjustAttackDamage(User player) {

@@ -37,13 +37,14 @@ public class CombatMenu {
                         //DamageCalculation.calculateDamageTaken(player, enemy);
                         select = "main";
                         playerTurn = false;
-                        System.out.println("-----------------" +enemy.hitPoints);
+                        enemy.printEnemy();
                     }
                     case "spell" -> {
                         System.out.println("\nWIP: Use spell\n");
                         
                         select = "main";
                         playerTurn =DamageCalculation.useSpell(player,enemy);
+                        enemy.printEnemy();
                     }
                     case "item" -> {
                         System.out.println("\nWIP: Use item\n");
@@ -51,12 +52,14 @@ public class CombatMenu {
                         
                         select = "main";
                         playerTurn = false;
+                        enemy.printEnemy();
                     }
                     case "defend" -> {
                         System.out.println("\nWIP: Use defend\n");
                         dmgCal.defend(player, enemy);
                         select = "main";
                         playerTurn = true;
+                        enemy.printEnemy();
                     }
                     case "flee" -> {
                         System.out.println("\nWIP: Flee combat\n");
