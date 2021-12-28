@@ -1,6 +1,7 @@
-package combat;
+package combat.enemies;
 
 import character.User;
+import combat.Enemy;
 
 public class Centaur  extends Enemy {
 

@@ -1,14 +1,15 @@
-package combat;
+package combat.enemies;
 
 import character.User;
+import combat.Enemy;
 
-public class Slime extends Enemy {
-
-	public Slime(User player) {
+public class Ogre extends Enemy {
+	
+	public Ogre(User player) {
 
 		this.attackDamage = 5;
 		this.attackDamage = this.attackDamage+(this.attackDamage*player.getLevel()*1/10);
-		this.name = "Slime";
+		this.name = "Ogre";
 		this.blockRate = 10;
 		this.dodgeChance = 0;
 		this.armor = 10;

@@ -5,7 +5,7 @@ import java.lang.String;
 
 public class User extends Stats {
 
-    String nickname;
+    protected String nickname;
     public  double hitPoints;
     public double maxHitPoints;
     public double physicalDamage;

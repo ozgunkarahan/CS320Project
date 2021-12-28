@@ -1,6 +1,8 @@
 package combat;
 
 import character.User;
+import combat.enemies.*;
+
 import java.util.Random;
 
 public class EnemyGeneration {

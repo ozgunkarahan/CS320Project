@@ -1,14 +1,15 @@
-package combat;
+package combat.enemies;
 
 import character.User;
+import combat.Enemy;
 
-public class Minotaur extends Enemy {
+public class Skeleton extends Enemy {
 
-	public Minotaur(User player) {
+	public Skeleton(User player) {
 
 		this.attackDamage = 5;
 		this.attackDamage = this.attackDamage+(this.attackDamage*player.getLevel()*1/10);
-		this.name = "Minotaur";
+		this.name = "Skeleton";
 		this.blockRate = 10;
 		this.dodgeChance = 0;
 		this.armor = 10;

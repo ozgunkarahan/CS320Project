@@ -1,14 +1,15 @@
-package combat;
+package combat.enemies;
 
 import character.User;
+import combat.Enemy;
 
-public class Harpy extends Enemy {
+public class Slime extends Enemy {
 
-	public Harpy(User player) {
+	public Slime(User player) {
 
 		this.attackDamage = 5;
 		this.attackDamage = this.attackDamage+(this.attackDamage*player.getLevel()*1/10);
-		this.name = "Harpy";
+		this.name = "Slime";
 		this.blockRate = 10;
 		this.dodgeChance = 0;
 		this.armor = 10;

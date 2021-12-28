@@ -1,4 +1,6 @@
-package character;
+package character.classes;
+
+import character.User;
 
 import java.util.ArrayList;
 

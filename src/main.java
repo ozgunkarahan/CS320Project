@@ -4,6 +4,10 @@ Ozgun Karahan, Mert Tan, Nursen Yildirim, Anil Uzel
  */
 
 import character.*;
+import character.classes.BattleMage;
+import character.classes.Ranger;
+import character.classes.Warrior;
+import character.classes.Wizard;
 
 public class main {
 
