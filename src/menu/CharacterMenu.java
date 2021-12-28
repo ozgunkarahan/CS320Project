@@ -35,11 +35,15 @@ public class CharacterMenu {
 		if(player.inventory[index+3]>0) {
 			if(index==1) {
 				player.hitPoints = player.hitPoints+25;
+				if(player.hitPoints>player.maxHitPoints)
+					player.hitPoints = player.maxHitPoints;
 				player.inventory[index+3]--;
 				System.out.println("Used small health potion");
 			}
 			else if(index==2) {
 				player.hitPoints = player.hitPoints+50;
+				if(player.hitPoints>player.maxHitPoints);
+					player.hitPoints = player.maxHitPoints;
 				player.inventory[index+3]--;
 				System.out.println("Used medium health potion");
 			}

@@ -56,7 +56,7 @@ public class CombatMenu {
                         System.out.println("\nWIP: Use defend\n");
                         dmgCal.defend(player, enemy);
                         select = "main";
-                        playerTurn = false;
+                        playerTurn = true;
                     }
                     case "flee" -> {
                         System.out.println("\nWIP: Flee combat\n");
