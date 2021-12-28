@@ -1,21 +1,19 @@
 package menu;
 
-import java.util.Scanner;
-
 import character.User;
 import combat.DamageCalculation;
 import combat.Enemy;
 import combat.EnemyGeneration;
-import combat.Skeleton;
+import java.util.Scanner;
 
 public class CombatMenu {
 
-   
 	public static void CombatMenu(User player) {
+
 		Scanner scanner =new Scanner(System.in);
-		
 		Enemy enemy = EnemyGeneration.generateEnemy(player);
     	enemy.printEnemy();
+
         System.out.println("\nWIP: Combat Menu");
         String select = "main";
         DamageCalculation dmgCal = new DamageCalculation();
@@ -24,12 +22,9 @@ public class CombatMenu {
         boolean enemyAlive = true;
         boolean playerAlive = true;
         boolean flee = false;
-        //int playerHP = 100; // temporary HP for player
-        //int enemyHP = 100; // temporary HP for enemy
+
         while (combatActive) {
-            
             while (playerTurn) {
-            	
                 switch (select.toLowerCase()) {
                 case "main" -> {
                     System.out.println("WIP: Display main menu and selections etc.");
@@ -52,7 +47,7 @@ public class CombatMenu {
                     }
                     case "item" -> {
                         System.out.println("\nWIP: Use item\n");
-                        menu.InventoryMenu.inventoryMenu(player);
+                        CharacterMenu.characterMenu(player);
                         
                         select = "main";
                         playerTurn = false;

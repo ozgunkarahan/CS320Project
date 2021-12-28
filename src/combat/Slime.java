@@ -3,7 +3,9 @@ package combat;
 import character.User;
 
 public class Slime extends Enemy {
+
 	public Slime(User player) {
+
 		this.attackDamage = 5;
 		this.attackDamage = this.attackDamage+(this.attackDamage*player.getLevel()*1/10);
 		this.name = "Slime";
@@ -13,6 +15,4 @@ public class Slime extends Enemy {
 		this.hitPoints = 50;
 		this.magicResist = 10;
 	}
-
-
 }

@@ -11,7 +11,6 @@ public class main {
 
         User player;
         String[] playerData;
-
         playerData = menu.Menu.startGame();
 
         // Creates a player class object based on the class chosen by the user
@@ -22,8 +21,6 @@ public class main {
             case "battlemage" -> new BattleMage(playerData[1]);
             default -> null;
         };
-
         menu.Menu.mainMenu(player);
     }
 }
-    

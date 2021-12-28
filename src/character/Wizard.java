@@ -1,9 +1,11 @@
 package character;
+
 import java.util.ArrayList;
-import java.lang.String;
 
 public class Wizard extends User {
+
     ArrayList<String> spellListWizard;
+
     public int cooldown;
     
     public Wizard(String nickname){
@@ -20,10 +22,5 @@ public class Wizard extends User {
         this.spellArray[0]="Fireball";
         this.spellArray[1]="Frostbite";
         this.cooldownArray[1] = 0;
-
-}
-
-    public void setclassWizard(){
-        
     }
 }

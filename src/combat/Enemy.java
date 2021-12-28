@@ -3,6 +3,7 @@ package combat;
 import character.User;
 
 public class Enemy {
+
 	public double hitPoints;
 	public double attackDamage;
 	public double blockRate;
@@ -21,7 +22,6 @@ public class Enemy {
 		this.rewardCurrency = 10;
 		this.materialDropAmount = 2;
 		this.materialDropIndex = 1; //0-6
-				
 	}
 	
 	public double adjustAttackDamage(User player) {
@@ -32,6 +32,4 @@ public class Enemy {
 	public void printEnemy() {
 		System.out.println("Enemy name: "+this.name+"\n"+" Remaining HP: "+this.hitPoints + "AD: "+this.attackDamage);
 	}
-	
-
 }

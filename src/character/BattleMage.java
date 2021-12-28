@@ -1,9 +1,9 @@
 package character;
-import java.lang.String;
+
 import java.util.ArrayList;
 
-
 public class BattleMage extends User {
+
     ArrayList<String> spellListBattleMage;
    
     public BattleMage (String nickname) {
@@ -16,9 +16,5 @@ public class BattleMage extends User {
     	this.physicalDamage = 10;
     	this.dodgeChance = 10;
     	this.nickname = nickname;
-    	
-    }
-     public void setclassBattleMage(){
-        
     }
 }
